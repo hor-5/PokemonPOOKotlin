@@ -1,10 +1,19 @@
 package com.example.pokemonpoo
 
 fun main() {
-
-
-
-
+    //titulo
+    println("                                  ,'\\\n" +
+            "    _.----.        ____         ,'  _\\   ___    ___     ____\n" +
+            "_,-'       `.     |    |  /`.   \\,-'    |   \\  /   |   |    \\  |`.\n" +
+            "\\      __    \\    '-.  | /   `.  ___    |    \\/    |   '-.   \\ |  |\n" +
+            " \\.    \\ \\   |  __  |  |/    ,','_  `.  |          | __  |    \\|  |\n" +
+            "   \\    \\/   /,' _`.|      ,' / / / /   |          ,' _`.|     |  |\n" +
+            "    \\     ,-'/  /   \\    ,'   | \\/ / ,`.|         /  /   \\  |     |\n" +
+            "     \\    \\ |   \\_/  |   `-.  \\    `'  /|  |    ||   \\_/  | |\\    |\n" +
+            "      \\    \\ \\      /       `-.`.___,-' |  |\\  /| \\      /  | |   |\n" +
+            "       \\    \\ `.__,'|  |`-._    `|      |__| \\/ |  `.__,'|  | |   |\n" +
+            "        \\_.-'       |__|    `-._ |              '-.|     '-.| |   |\n" +
+            "                                `'                            '-._|\n")
     //creamos los tipos de pokemon
     var tipoPlanta: Tipo = Tipo(3, "planta")
     var tipoAgua: Tipo = Tipo(2, "agua")
@@ -38,26 +47,42 @@ fun main() {
                                     listOf("wartortle","blastoise"),"\tEl caparazón de Squirtle no le sirve de protección únicamente. Su forma " +
                                     "redondeada y las hendiduras que tiene le ayudan a deslizarse en el agua y le permiten nadar a gran velocidad.","media")
 
-
+        //----------------------------------------------------FIN CREACIÓN DE POKEMONES--------------------------------------------------------//
     //Creando pokedex
     var pokedexSonia = Pokedex(4,arrayListOf(charmander,squirtle))
+    var pokedexAsh = Pokedex(6, arrayListOf())
     //creamos un entrenador pokemon
     var ash: EntrenadorPokemon = EntrenadorPokemon(24,"Ash","Ketchup")
     var sonia:EntrenadorPokemon = EntrenadorPokemon(15,"Sonia","Daysutke", pokedexSonia,arrayListOf(charmander,squirtle))
 
-    //El entrenador Ash eligió a Pikachu como su pokemon
+    //El entrenador Ash atrapó a Pikachu
     ash.aPokemones.add(pikachu)
+    //Ash entrena a pikachu
     ash.entrenarPokemon("pikachu")
 
+    //sonia encuentra a ash con pikachu y consulta su pokedex
+    println("Sonia encuentra a ash con pikachu y consulta su pokedex")
     sonia.pokedex?.registrarPokemon(pikachu)
+
+    //ash encuentra a Sonia con Charmander y consulta su pokedex
+    println("Ash encuentra a Sonia con Charmander y consulta su pokedex")
+    ash.pokedex?.registrarPokemon(charmander)
+
+    //ash encuentra un bulbasaur y consulta su pokedex
+    println("Ash encuentra un bulbasaur y consulta su pokedex")
+    ash.pokedex?.registrarPokemon(bulbasaur)
+
+    //ash encuentra un squirtle y consulta su pokedex
+    println("Ash encuentra un squirtle y consulta su pokedex")
+    ash.pokedex?.registrarPokemon(squirtle)
 
     //Estableciendo campo de batalla
     var campoDeBatalla :CampoDeBatalla = CampoDeBatalla(45,"Liga naranja","Meseta Añil",
         arrayListOf(ash.elegirPokemon("pikachu")!!,sonia.elegirPokemon("squirtle")!!))
-
+    //comenzando batalla
     campoDeBatalla.comenzarBatalla()
 
-    pikachu.evolucionar()
+
 
 
 }

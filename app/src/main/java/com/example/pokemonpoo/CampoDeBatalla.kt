@@ -11,7 +11,7 @@ class CampoDeBatalla(idCampoDeBatalla: Int,nombre:String,localizacion:String,pok
         if (pokemones.size > 1){
             var pokemon1:Pokemon = pokemones[0]
             var pokemon2:Pokemon = pokemones[1]
-            println("Comenzando la batalla entre ${pokemon1.nombre.toUpperCase()} y ${pokemon2.nombre.toUpperCase()}")
+            println("\nComenzando la batalla entre ${pokemon1.nombre.toUpperCase()} y ${pokemon2.nombre.toUpperCase()}")
             var random = Random()
             var batalla: Boolean = true
             while (batalla){
@@ -40,14 +40,19 @@ class CampoDeBatalla(idCampoDeBatalla: Int,nombre:String,localizacion:String,pok
 
             }
 
-            var pokemonGanador:Pokemon = if(pokemon1.salud>0){pokemon1}else{pokemon2}
-
-            println("Batalla finalizada!")
-            println("El ganador es ${pokemonGanador.nombre}, resistió quedando con ${pokemonGanador.salud} puntos de salud.")
+            mostrarGanador(pokemon1,pokemon2)
 
 
         }else{
             println("Se necesitan dos pokemones para poder batallar!")
         }
+    }
+
+    fun mostrarGanador(pokemon1:Pokemon, pokemon2:Pokemon){
+
+        var pokemonGanador:Pokemon = if(pokemon1.salud>0){pokemon1}else{pokemon2}
+
+        println("Batalla finalizada!")
+        println("El ganador es ${pokemonGanador.nombre}, resistió quedando con ${pokemonGanador.salud} puntos de salud.")
     }
 }

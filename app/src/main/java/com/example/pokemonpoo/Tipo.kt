@@ -25,5 +25,13 @@ class Tipo(idTipo:Int,nombreTipo: String) {
         else -> {listOf("")}
     }
 
+    fun esEfectivoContra(nombreTipo:String):Boolean{
+        return efectividad.contains(nombreTipo)
+    }
+
+    fun esDebilContra(nombreTipo:String):Boolean{
+        return debilidad.contains(nombreTipo)
+    }
+
 
 }

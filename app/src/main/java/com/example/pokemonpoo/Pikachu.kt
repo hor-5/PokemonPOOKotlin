@@ -23,4 +23,8 @@ class Pikachu(idPokemon:Int, nombre:String,tipoPrincipal:Tipo,
         }
     }
 
+    override fun toString(): String {
+        return "Soy un pokemon $nombre, mi id es #$idPokemon soy de tipo ${tipoPrincipal.nombreTipo}, y mi estabilidad ahora es $nivelDeEstabilidad"
+    }
+
 }

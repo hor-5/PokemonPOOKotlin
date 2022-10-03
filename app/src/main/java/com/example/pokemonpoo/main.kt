@@ -48,12 +48,20 @@ fun main() {
                                     "redondeada y las hendiduras que tiene le ayudan a deslizarse en el agua y le permiten nadar a gran velocidad.","media")
 
         //----------------------------------------------------FIN CREACIÓN DE POKEMONES--------------------------------------------------------//
+
     //Creando pokedex
     var pokedexSonia = Pokedex(4,arrayListOf(charmander,squirtle))
     var pokedexAsh = Pokedex(6, arrayListOf())
+
     //creamos un entrenador pokemon
     var ash: EntrenadorPokemon = EntrenadorPokemon(24,"Ash","Ketchup")
     var sonia:EntrenadorPokemon = EntrenadorPokemon(15,"Sonia","Daysutke", pokedexSonia,arrayListOf(charmander,squirtle))
+
+    //usando metodos toString de cada pokemon
+    println(squirtle)
+    println(pikachu)
+    println(charmander)
+    println(bulbasaur)
 
     //El entrenador Ash atrapó a Pikachu
     ash.aPokemones.add(pikachu)

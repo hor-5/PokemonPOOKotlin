@@ -29,7 +29,7 @@ class Charmander(
     }
 
     override fun toString(): String {
-        return "Soy un pokemon $nombre, mi id es #$idPokemon y mi llama está $nivelDeLlama"
+        return "Soy un pokemon $nombre, mi id es #$idPokemon soy de tipo ${tipoPrincipal.nombreTipo}, y mi llama está $nivelDeLlama. Me encantaria llegar a evolucionar a ${evoluciones[1]}"
     }
 
 

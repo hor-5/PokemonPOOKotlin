@@ -63,6 +63,9 @@ fun main() {
     println(charmander)
     println(bulbasaur)
 
+    //pausar por 5 segundos la ejecucion
+    pausarEjecucion()
+
     //El entrenador Ash atrapó a Pikachu
     ash.aPokemones.add(pikachu)
     //Ash entrena a pikachu
@@ -72,17 +75,29 @@ fun main() {
     println("Sonia encuentra a ash con pikachu y consulta su pokedex")
     sonia.pokedex?.registrarPokemon(pikachu)
 
+    //pausar por 5 segundos la ejecucion
+    pausarEjecucion()
+
     //ash encuentra a Sonia con Charmander y consulta su pokedex
     println("Ash encuentra a Sonia con Charmander y consulta su pokedex")
     ash.pokedex?.registrarPokemon(charmander)
+
+    //pausar por 5 segundos la ejecucion
+    pausarEjecucion()
 
     //ash encuentra un bulbasaur y consulta su pokedex
     println("Ash encuentra un bulbasaur y consulta su pokedex")
     ash.pokedex?.registrarPokemon(bulbasaur)
 
+    //pausar por 5 segundos la ejecucion
+    pausarEjecucion()
+
     //ash encuentra un squirtle y consulta su pokedex
     println("Ash encuentra un squirtle y consulta su pokedex")
     ash.pokedex?.registrarPokemon(squirtle)
+
+    //pausar por 5 segundos la ejecucion
+    pausarEjecucion()
 
     //Estableciendo campo de batalla
     var campoDeBatalla :CampoDeBatalla = CampoDeBatalla(45,"Liga naranja","Meseta Añil",
@@ -93,4 +108,13 @@ fun main() {
 
 
 
+}
+
+fun pausarEjecucion(){
+    try {
+        // sleep for one second
+        Thread.sleep(5000)
+    } catch (e: InterruptedException) {
+        println(e)
+    }
 }

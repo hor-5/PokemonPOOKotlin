@@ -67,7 +67,7 @@ class EntrenadorPokemon{
         }
     }
 
-    fun entrenarPokemon(pokemon:Pokemon,intensidad:Int=0){
+    fun entrenarPokemon(pokemon:Pokemon,intensidad:Int=1){
         try{
             var pokemonSeleccionado:Pokemon = aPokemones[aPokemones.indexOf(pokemon)]
             pokemonSeleccionado.entrenar(intensidad)

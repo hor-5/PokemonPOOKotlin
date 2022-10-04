@@ -13,6 +13,10 @@ class Pikachu(idPokemon:Int, nombre:String,tipoPrincipal:Tipo,
     //comienza el cuerpo de la clase
     var nivelDeEstabilidad:String = nivelDeEstabilidad
 
+    override fun getEvoluciones() {
+        println("la unica evolucion para $nombre es ${evoluciones[0]}")
+    }
+
     override fun evolucionar(){
         if (this.nivel<30){
             println("${this.nombre} todavia no está listo para evolucionar, necesita subir ${30-this.nivel} niveles más")

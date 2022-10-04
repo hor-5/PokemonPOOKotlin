@@ -136,7 +136,8 @@ abstract class Pokemon(
         return imgASCII
     }
 
-    fun getEvoluciones(){
+    open fun getEvoluciones(){
+        println("las evoluciones de $nombre son:")
         for (evolucion in evoluciones){
             println(evolucion.capitalize())
         }
@@ -173,11 +174,17 @@ abstract class Pokemon(
             println("${this.nombre} ha sido derrotado...")
         }
     }
-    //sobrestrito en squirtle utilizando intensidad
-    open fun entrenar(intensidad:Int=0){
+    //sobrecargado
+    fun entrenar(){
         println("${this.nombre.capitalize()} nivel ${this.nivel} está entrenando... ")
         this.nivel++
         println("${this.nombre.capitalize()} subió un nivel, ahora es nivel ${this.nivel}.")
+    }
+
+    fun entrenar(intensidad:Int){
+        println("${this.nombre.capitalize()} nivel ${this.nivel} está entrenando intensamente... ")
+        this.nivel+=intensidad
+        println("${this.nombre.capitalize()} subió $intensidad niveles, ahora es nivel ${this.nivel}.")
     }
     //método a sobrescribir e implementar en cada clase hija
     abstract fun evolucionar()

@@ -21,6 +21,7 @@ fun main() {
     var tipoVeneno: Tipo = Tipo(8, "veneno")
     var tipoElectrico: Tipo = Tipo(5, "electrico")
 
+
     //----Creamos los cuatro pokemones----
 
     //Creando a bulbasaur
@@ -57,6 +58,9 @@ fun main() {
     var ash: EntrenadorPokemon = EntrenadorPokemon(24,"Ash","Ketchup")
     var sonia:EntrenadorPokemon = EntrenadorPokemon(15,"Sonia","Daysutke", pokedexSonia,arrayListOf(charmander,squirtle))
 
+
+
+
     //usando metodos toString de cada pokemon
     println(squirtle)
     println(pikachu)
@@ -68,8 +72,17 @@ fun main() {
 
     //El entrenador Ash atrapó a Pikachu
     ash.aPokemones.add(pikachu)
-    //Ash entrena a pikachu
+
+    ////metodos de entrenamiento sobrecarga
     ash.entrenarPokemon("pikachu")
+    ash.entrenarPokemon(pikachu,3)
+    sonia.entrenarPokemon(charmander)
+
+    //get personalizado
+    charmander.getEvoluciones()
+    //metodo sobreescrito
+    pikachu.getEvoluciones()
+
 
     //sonia encuentra a ash con pikachu y consulta su pokedex
     println("Sonia encuentra a ash con pikachu y consulta su pokedex")

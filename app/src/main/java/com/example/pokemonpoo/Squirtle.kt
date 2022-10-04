@@ -28,11 +28,6 @@ class Squirtle(idPokemon:Int, nombre:String,tipoPrincipal:Tipo,
 
     }
 
-    override fun entrenar(intensidad:Int){
-        println("${this.nombre.capitalize()} nivel ${this.nivel} está entrenando intensamente... ")
-        this.nivel+=intensidad
-        println("${this.nombre.capitalize()} subió un nivel, ahora es nivel ${this.nivel}.")
-    }
 
     override fun toString(): String {
         return "Soy un pokemon $nombre, mi id es #$idPokemon soy de tipo ${tipoPrincipal.nombreTipo} tengo $capacidadAtaque puntos de ataque, y la dureza de mi caparazón es $durezaCaparazon"

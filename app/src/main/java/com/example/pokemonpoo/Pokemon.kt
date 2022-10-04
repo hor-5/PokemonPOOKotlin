@@ -136,6 +136,7 @@ abstract class Pokemon(
         return imgASCII
     }
 
+    //sobreescrito en pikachu
     open fun getEvoluciones(){
         println("las evoluciones de $nombre son:")
         for (evolucion in evoluciones){

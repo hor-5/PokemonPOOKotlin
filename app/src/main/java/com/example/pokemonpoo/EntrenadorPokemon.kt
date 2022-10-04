@@ -45,6 +45,7 @@ class EntrenadorPokemon{
     }
 
 
+
     fun elegirPokemon(nombrePokemon:String):Pokemon?{
         return buscarPokemon(nombrePokemon)
     }
@@ -68,11 +69,11 @@ class EntrenadorPokemon{
     }
 
     fun entrenarPokemon(pokemon:Pokemon,intensidad:Int=1){
-        try{
+        if (aPokemones.contains(pokemon)){
             var pokemonSeleccionado:Pokemon = aPokemones[aPokemones.indexOf(pokemon)]
             pokemonSeleccionado.entrenar(intensidad)
-        }catch(e:Error){
-            println(e.message)
+        }else{
+            println("el entrenador no tiene a ${pokemon.nombre}")
         }
     }
 

@@ -1,5 +1,6 @@
 package com.example.pokemonpoo
 
+
 class EntrenadorPokemon{
     //comienza el cuerpo de la clase
 
@@ -48,10 +49,30 @@ class EntrenadorPokemon{
         return buscarPokemon(nombrePokemon)
     }
 
+    fun elegirPokemon(tipo: Tipo):Pokemon{
+        var pokemonSeleccionado : Pokemon? = null
+        for (pokemon in aPokemones){
+            if (tipo.nombreTipo == pokemon.tipoPrincipal.nombreTipo){
+                pokemonSeleccionado = pokemon
+                break
+            }
+        }
+        return pokemonSeleccionado!!
+    }
+
     fun entrenarPokemon(nombrePokemon:String){
         var pokemonSeleccionado:Pokemon? = buscarPokemon(nombrePokemon)
         if (pokemonSeleccionado!=null){
             pokemonSeleccionado.entrenar()
+        }
+    }
+
+    fun entrenarPokemon(pokemon:Pokemon,intensidad:Int=0){
+        try{
+            var pokemonSeleccionado:Pokemon = aPokemones[aPokemones.indexOf(pokemon)]
+            pokemonSeleccionado.entrenar(intensidad)
+        }catch(e:Error){
+            println(e.message)
         }
     }
 

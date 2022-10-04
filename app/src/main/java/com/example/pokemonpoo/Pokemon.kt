@@ -21,41 +21,7 @@ abstract class Pokemon(
     var descripcion:String = descripcion
     var imgASCII : String = ""
 
-    fun atacar(pokemon: Pokemon){
-        if(pokemon.salud>0  && this.salud > 0){
-            if (this.tipoPrincipal.esEfectivoContra(pokemon.tipoPrincipal.nombreTipo)){
-                println("Los pokemon de tipo ${this.tipoPrincipal.nombreTipo.toUpperCase()} como ${this.nombre} son efectivos contra los de tipo ${pokemon.tipoPrincipal.nombreTipo.toUpperCase()}")
-                println("${this.nombre.toUpperCase()} le infringe el doble de daño a ${pokemon.nombre.toUpperCase()}")
-                println("${this.nombre.capitalize()} tiene ${this.salud} de salud y está atacando...")
-                pokemon.salud-=(this.capacidadAtaque*2)
-            }else{
-                println("${this.nombre.capitalize()} tiene ${this.salud} de salud y está atacando...")
-                pokemon.salud-=this.capacidadAtaque
-            }
 
-        }else{
-            if (pokemon.salud<=0){
-                println("El pokemon ${pokemon.nombre.toUpperCase()} ha sido derrotado por ${this.nombre.toUpperCase()}")
-            }
-            else if(this.salud<=0){
-                println("El pokemon ${this.nombre.toUpperCase()} ha sido derrotado por ${pokemon.nombre.toUpperCase()}")
-            }
-
-        }
-    }
-    fun defenderse(){
-        if (this.salud>0){
-            println("${this.nombre.capitalize()} se está defendiendo y recuperando salud, ahora tiene ${this.salud} de salud")
-            this.salud+=this.capacidadDefensa
-        }else{
-            println("${this.nombre} ha sido derrotado...")
-        }
-    }
-    fun entrenar(){
-        println("${this.nombre.capitalize()} nivel ${this.nivel} está entrenando... ")
-        this.nivel++
-        println("${this.nombre.capitalize()} subió un nivel, ahora es nivel ${this.nivel}.")
-    }
 
     //getters y setters
     fun setImagenASCII(pokemon : Pokemon){
@@ -170,6 +136,49 @@ abstract class Pokemon(
         return imgASCII
     }
 
+    fun getEvoluciones(){
+        for (evolucion in evoluciones){
+            println(evolucion.capitalize())
+        }
+    }
+
+
+    fun atacar(pokemon: Pokemon){
+        if(pokemon.salud>0  && this.salud > 0){
+            if (this.tipoPrincipal.esEfectivoContra(pokemon.tipoPrincipal.nombreTipo)){
+                println("Los pokemon de tipo ${this.tipoPrincipal.nombreTipo.toUpperCase()} como ${this.nombre} son efectivos contra los de tipo ${pokemon.tipoPrincipal.nombreTipo.toUpperCase()}")
+                println("${this.nombre.toUpperCase()} le infringe el doble de daño a ${pokemon.nombre.toUpperCase()}")
+                println("${this.nombre.capitalize()} tiene ${this.salud} de salud y está atacando...")
+                pokemon.salud-=(this.capacidadAtaque*2)
+            }else{
+                println("${this.nombre.capitalize()} tiene ${this.salud} de salud y está atacando...")
+                pokemon.salud-=this.capacidadAtaque
+            }
+
+        }else{
+            if (pokemon.salud<=0){
+                println("El pokemon ${pokemon.nombre.toUpperCase()} ha sido derrotado por ${this.nombre.toUpperCase()}")
+            }
+            else if(this.salud<=0){
+                println("El pokemon ${this.nombre.toUpperCase()} ha sido derrotado por ${pokemon.nombre.toUpperCase()}")
+            }
+
+        }
+    }
+    fun defenderse(){
+        if (this.salud>0){
+            println("${this.nombre.capitalize()} se está defendiendo y recuperando salud, ahora tiene ${this.salud} de salud")
+            this.salud+=this.capacidadDefensa
+        }else{
+            println("${this.nombre} ha sido derrotado...")
+        }
+    }
+    //sobrestrito en squirtle utilizando intensidad
+    open fun entrenar(intensidad:Int=0){
+        println("${this.nombre.capitalize()} nivel ${this.nivel} está entrenando... ")
+        this.nivel++
+        println("${this.nombre.capitalize()} subió un nivel, ahora es nivel ${this.nivel}.")
+    }
     //método a sobrescribir e implementar en cada clase hija
     abstract fun evolucionar()
 

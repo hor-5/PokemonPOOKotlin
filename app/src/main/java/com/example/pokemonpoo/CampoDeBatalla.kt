@@ -7,6 +7,13 @@ class CampoDeBatalla(idCampoDeBatalla: Int,nombre:String,localizacion:String,pok
     var localizacion:String = localizacion
     var pokemones:ArrayList<Pokemon> = pokemones
 
+
+    fun getPokemonesEnBatalla(){
+        pokemones.forEach {
+            println(it)
+        }
+    }
+
     fun comenzarBatalla(){
         if (pokemones.size > 1){
             var pokemon1:Pokemon = pokemones[0]
